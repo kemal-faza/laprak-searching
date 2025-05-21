@@ -2,18 +2,12 @@
 
 int main()
 {
-    int N, i;
-    char firstLetter = 'A';
+    int N, i, banyakA = 0, banyakB = 0, banyakC = 0, banyakD = 0, banyakE = 0;
 
     printf("Masukkan nilai N: ");
     scanf("%d", &N);
 
-    int tabNilai[N], hasilKonversi[N], frekuensiNilai[5];
-
-    for (i = 0; i < 5; i++)
-    {
-        frekuensiNilai[i] = 0;
-    }
+    int tabNilai[N], hasilKonversi[N];
 
     for (i = 0; i < N; i++)
     {
@@ -23,35 +17,35 @@ int main()
         if (tabNilai[i] >= 80)
         {
             hasilKonversi[i] = 'A';
-            frekuensiNilai[0]++;
+            banyakA++;
         }
         else if (tabNilai[i] >= 70)
         {
             hasilKonversi[i] = 'B';
-            frekuensiNilai[1]++;
+            banyakB++;
         }
         else if (tabNilai[i] >= 55)
         {
             hasilKonversi[i] = 'C';
-            frekuensiNilai[2]++;
+            banyakC++;
         }
         else if (tabNilai[i] >= 40)
         {
             hasilKonversi[i] = 'D';
-            frekuensiNilai[3]++;
+            banyakD++;
         }
         else
         {
             hasilKonversi[i] = 'E';
-            frekuensiNilai[4]++;
+            banyakE++;
         }
     }
 
-    for (i = 0; i < N; i++)
-    {
-        printf("%c = %d\n", firstLetter, frekuensiNilai[i]);
-        firstLetter++;
-    }
+    printf("A = %d\n", banyakA);
+    printf("B = %d\n", banyakB);
+    printf("C = %d\n", banyakC);
+    printf("D = %d\n", banyakD);
+    printf("E = %d\n", banyakE);
 
     return 0;
 }
