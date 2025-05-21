@@ -2,17 +2,21 @@
 
 int main()
 {
-    int N, i, banyakA = 0, banyakB = 0, banyakC = 0, banyakD = 0, banyakE = 0;
+    int N, i, jumlah, banyakA = 0, banyakB = 0, banyakC = 0, banyakD = 0, banyakE = 0;
+    float rataRata;
 
     printf("Masukkan nilai N: ");
     scanf("%d", &N);
 
     int tabNilai[N], hasilKonversi[N];
+    jumlah = 0;
 
     for (i = 0; i < N; i++)
     {
         printf("Masukkan nilai ke-%d: ", i + 1);
         scanf("%d", &tabNilai[i]);
+
+        jumlah += tabNilai[i];
 
         if (tabNilai[i] >= 80)
         {
@@ -41,11 +45,14 @@ int main()
         }
     }
 
+    rataRata = (float)jumlah / N;
+
     printf("A = %d\n", banyakA);
     printf("B = %d\n", banyakB);
     printf("C = %d\n", banyakC);
     printf("D = %d\n", banyakD);
     printf("E = %d\n", banyakE);
+    printf("Rata-rata = %f\n", rataRata);
 
     return 0;
 }

@@ -21,7 +21,7 @@ int main()
     last = T[N - 1];
     i = 0;
 
-    while (T[i] < X)
+    while (T[i] > X)
     {
         i++;
     }
