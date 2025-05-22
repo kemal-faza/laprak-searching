@@ -6,11 +6,11 @@
 
 void addMK(int TabMK[], int *NMK)
 {
-    int MKX;
+    int MKX, i;
     printf("Masukkan kode mata kuliah yang baru: ");
     scanf("%d", &MKX);
 
-    for (int i = 0; i < *NMK; i++)
+    for (i = 0; i < *NMK; i++)
     {
         if (TabMK[i] == MKX)
         {
@@ -33,10 +33,11 @@ void addMK(int TabMK[], int *NMK)
 
 void sortMK(int TabMK[], int NMK)
 {
-    for (int pass = 0; pass < NMK - 1; pass++)
+    int i, pass, temp, iMax;
+    for (pass = 0; pass < NMK - 1; pass++)
     {
-        int iMax = pass;
-        for (int i = pass + 1; i < NMK; i++)
+        iMax = pass;
+        for (i = pass + 1; i < NMK; i++)
         {
             if (TabMK[iMax] >= TabMK[i])
             {
@@ -44,7 +45,7 @@ void sortMK(int TabMK[], int NMK)
             }
         }
 
-        int temp = TabMK[iMax];
+        temp = TabMK[iMax];
         TabMK[iMax] = TabMK[pass];
         TabMK[pass] = temp;
     }
@@ -66,14 +67,14 @@ void printMK(int TabMK[], int NMK)
 
 int main()
 {
+    int NMK, N;
     int TabMK[MAX_MK] = {1, 2, 3, 4, 6};
-    int NMK = 5;
+    NMK = 5;
 
     printf("Tabel sebelum ditambahkan elemen baru: ");
     printMK(TabMK, NMK);
 
     printf("Berapa kali anda ingin melakukan penambahan: ");
-    int N;
     scanf("%d", &N);
 
     for (int i = 0; i < N; i++)
